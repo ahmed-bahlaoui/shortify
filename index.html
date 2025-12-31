@@ -106,7 +106,7 @@
                             </p>
                         </div>
                         <!-- Link Info -->
-                        <div class="grow w-full space-y-6">
+                        <div class="grow w-full space-y-6 min-w-0 overflow-hidden">
                             <!-- Original Link -->
                             <div class="space-y-1">
                                 <p
@@ -119,14 +119,14 @@
                             </div>
                             <!-- Shortened Link & Actions -->
                             <div
-                                class="bg-background-light dark:bg-background-dark/50 rounded-lg p-4 border border-border-light dark:border-border-dark flex flex-col sm:flex-row items-center justify-between gap-4">
-                                <div class="flex items-center gap-3 overflow-hidden w-full sm:w-auto">
-                                    <span class="material-symbols-outlined text-primary">link</span>
+                                class="bg-background-light dark:bg-background-dark/50 rounded-lg p-4 border border-border-light dark:border-border-dark flex flex-col sm:flex-row items-center justify-between gap-4 w-full overflow-hidden">
+                                <div class="flex items-center gap-3 min-w-0 flex-1 overflow-hidden">
+                                    <span class="material-symbols-outlined text-primary shrink-0">link</span>
                                     <a id="short-url-link"
                                         class="text-xl sm:text-2xl font-bold text-primary hover:underline truncate"
                                         href="#" target="_blank"></a>
                                 </div>
-                                <div class="flex items-center gap-2 w-full sm:w-auto">
+                                <div class="flex items-center gap-2 shrink-0">
                                     <button id="copy-btn" onclick="copyToClipboard()"
                                         class="flex-1 sm:flex-none h-10 px-4 bg-primary hover:bg-primary-hover text-white rounded-md text-sm font-semibold transition-colors flex items-center justify-center gap-2 shadow-sm">
                                         <span id="copy-icon"
