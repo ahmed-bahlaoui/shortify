@@ -1,8 +1,12 @@
-# Shortify — URL Shortener
+<div style="text-align: center; font-family: 'Arial'; font-size: 1.25em">
+  <h2>Shortify: Shorten your link, expand your reach</h2>
+  <img src="shortify.png" alt="Project screenshot"  style="border: 1px solid black;border-radius:18px">
 
-A modern, serverless URL shortener built with **Vercel**, **Upstash Redis**, and **FastAPI**. Features instant redirects via Edge Middleware and a beautiful TailwindCSS frontend.
+</div>
 
-## Architecture Overview
+#### A modern, serverless URL shortener built with **Vercel**, **Upstash Redis**, and **FastAPI**. Features instant redirects via Edge Middleware and a beautiful TailwindCSS frontend.
+
+## Architecture overview
 
 This application follows a **two-path architecture** optimized for speed and scalability:
 
@@ -20,7 +24,7 @@ This application follows a **two-path architecture** optimized for speed and sca
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 shortify/
@@ -32,32 +36,69 @@ shortify/
 │
 ├── api/
 │   └── shorten.py          # FastAPI endpoint for URL creation
-    └── redirect.ts 
+    └── redirect.ts
 │
 └── src/
     ├── input.css           # TailwindCSS source
     └── output.css          # Compiled CSS
 ```
 
----
+## Tech Stack
 
-## 🔧 Tech Stack
-
-- **Frontend**: HTML5, TailwindCSS 4.x, Vanilla JavaScript
-- **Backend**: Python 3.11+, FastAPI
-- **Database**: Upstash Redis (Serverless)
-- **Hosting**: Vercel (Edge + Serverless Functions)
-- **Build Tools**: Bun, TailwindCSS CLI
-
----
+<table style="display: flex; justify-content: center; align-items: center;">
+  <tr>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=html" width="96" height="96" alt="HTML5" />
+      <br>HTML5
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=tailwind" width="96" height="96" alt="TailwindCSS" />
+      <br>TailwindCSS
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=js" width="96" height="96" alt="JavaScript" />
+      <br>JavaScript
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=python" width="96" height="96" alt="Python" />
+      <br>Python
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=fastapi" width="96" height="96" alt="FastAPI" />
+      <br>FastAPI
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=redis" width="96" height="96" alt="Redis" />
+      <br>Upstash Redis
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=vercel" width="96" height="96" alt="Vercel" />
+      <br>Vercel
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=bun" width="96" height="96" alt="Bun" />
+      <br>Bun
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=typescript" width="96" height="96" alt="TypeScript" />
+      <br>TypeScript
+    </td>
+    <td align="center" width="96">
+      <img src="https://skillicons.dev/icons?i=vscode" width="96" height="96" alt="VS Code" />
+      <br>VS Code
+    </td>
+  </tr>
+</table>
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Bun](https://bun.sh/) or Node.js 18+
-- [Vercel CLI](https://vercel.com/cli) (optional for local dev)
-- [Upstash Redis](https://upstash.com/) account (free tier available)
+- **[Bun](https://bun.sh/) or Node.js 18+**
+- **[Vercel CLI](https://vercel.com/cli) (optional for local dev)**
+- **[Upstash Redis](https://upstash.com/) account (free tier available)**
 
 ### 1. Clone & Install
 
@@ -92,9 +133,7 @@ vercel dev
 vercel --prod
 ```
 
----
-
-## 📡 API Reference
+## API Reference
 
 ### Create Short URL
 
@@ -125,8 +164,6 @@ GET /:slug
 
 **Response:** `HTTP 307 Temporary Redirect` with `Location` header
 
----
-
 ## Environment Variables needed (set these up locally)
 
 | Variable                   | Description                        |
@@ -134,9 +171,6 @@ GET /:slug
 | `UPSTASH_REDIS_REST_URL`   | Upstash Redis REST API URL         |
 | `UPSTASH_REDIS_REST_TOKEN` | Upstash Redis authentication token |
 
----
-
-
-## 📄 License
+## License
 
 MIT License — feel free to use this project for learning or production.
