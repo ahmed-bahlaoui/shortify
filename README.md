@@ -1,0 +1,156 @@
+# Shortify — URL Shortener
+
+A modern, serverless URL shortener built with **Vercel**, **Upstash Redis**, and **FastAPI**. Features instant redirects via Edge Middleware and a beautiful TailwindCSS frontend.
+
+---
+
+## Architecture Overview
+
+This application follows a **two-path architecture** optimized for speed and scalability:
+
+![Project architecture image featuring two-path architecture](overview.png)
+
+### Why This Architecture?
+
+| Component           | Technology                | Why?                                                             |
+| ------------------- | ------------------------- | ---------------------------------------------------------------- |
+| **Frontend**        | Static HTML + TailwindCSS | Fast CDN delivery, no server needed                              |
+| **API Layer**       | Python FastAPI on Vercel  | Serverless, scales to zero, easy Redis integration               |
+| **Slug Generation** | Counter + Base62          | Short slugs (e.g., `g8`), guaranteed unique via atomic increment |
+| **Database**        | Upstash Redis             | Serverless Redis with REST API, <1ms latency                     |
+| **Redirects**       | Vercel Edge Middleware    | Runs at CDN edge (~50ms globally), no cold starts                |
+
+---
+
+## 📁 Project Structure
+
+```
+shortify/
+├── index.html              # Frontend UI (TailwindCSS)
+├── middleware.ts           # Vercel Edge Middleware (redirect handler)
+├── vercel.json             # Vercel deployment configuration
+├── package.json            # Node.js dependencies
+├── requirements.txt        # Python dependencies
+├── .env.example            # Environment variables template
+│
+├── api/
+│   └── shorten.py          # FastAPI endpoint for URL creation
+│
+└── src/
+    ├── input.css           # TailwindCSS source
+    └── output.css          # Compiled CSS
+```
+
+---
+
+## 🔧 Tech Stack
+
+- **Frontend**: HTML5, TailwindCSS 4.x, Vanilla JavaScript
+- **Backend**: Python 3.11+, FastAPI
+- **Database**: Upstash Redis (Serverless)
+- **Hosting**: Vercel (Edge + Serverless Functions)
+- **Build Tools**: Bun, TailwindCSS CLI
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Bun](https://bun.sh/) or Node.js 18+
+- [Vercel CLI](https://vercel.com/cli) (optional for local dev)
+- [Upstash Redis](https://upstash.com/) account (free tier available)
+
+### 1. Clone & Install
+
+```bash
+git clone https://github.com/yourusername/shortify.git
+cd shortify
+bun install
+```
+
+### 2. Set Up Environment Variables
+
+Create a `.env.local` file:
+
+```env
+UPSTASH_REDIS_REST_URL=https://your-redis-url.upstash.io
+UPSTASH_REDIS_REST_TOKEN=your-token-here
+```
+
+### 3. Run Locally
+
+```bash
+# Start TailwindCSS watcher
+bun run dev
+
+# In another terminal, start Vercel dev server
+vercel dev
+```
+
+### 4. Deploy to Vercel
+
+```bash
+vercel --prod
+```
+
+---
+
+## 📡 API Reference
+
+### Create Short URL
+
+```http
+POST /api/shorten
+Content-Type: application/json
+
+{
+  "url": "https://example.com/very/long/url"
+}
+```
+
+**Response:**
+
+```json
+{
+  "shortUrl": "https://short.ly/g8",
+  "slug": "g8",
+  "originalUrl": "https://example.com/very/long/url"
+}
+```
+
+### Redirect (via Edge Middleware)
+
+```http
+GET /:slug
+```
+
+**Response:** `HTTP 307 Temporary Redirect` with `Location` header
+
+---
+
+## 🔐 Environment Variables
+
+| Variable                   | Description                        |
+| -------------------------- | ---------------------------------- |
+| `UPSTASH_REDIS_REST_URL`   | Upstash Redis REST API URL         |
+| `UPSTASH_REDIS_REST_TOKEN` | Upstash Redis authentication token |
+
+---
+
+## 📋 Implementation Checklist
+
+- [x] Frontend UI with TailwindCSS
+- [ ] API endpoint `/api/shorten` (FastAPI)
+- [ ] Edge Middleware for redirects
+- [ ] Upstash Redis integration
+- [ ] Base62 slug generation
+- [ ] QR code generation
+- [ ] Analytics tracking (future)
+- [ ] Custom alias support (future)
+
+---
+
+## 📄 License
+
+MIT License — feel free to use this project for learning or production.
