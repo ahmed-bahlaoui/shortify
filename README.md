@@ -2,8 +2,6 @@
 
 A modern, serverless URL shortener built with **Vercel**, **Upstash Redis**, and **FastAPI**. Features instant redirects via Edge Middleware and a beautiful TailwindCSS frontend.
 
----
-
 ## Architecture Overview
 
 This application follows a **two-path architecture** optimized for speed and scalability:
@@ -26,8 +24,7 @@ This application follows a **two-path architecture** optimized for speed and sca
 
 ```
 shortify/
-├── index.html              # Frontend UI (TailwindCSS)
-├── middleware.ts           # Vercel Edge Middleware (redirect handler)
+├── index.html              # Frontend UI (Static HTML & TailwindCSS)
 ├── vercel.json             # Vercel deployment configuration
 ├── package.json            # Node.js dependencies
 ├── requirements.txt        # Python dependencies
@@ -35,6 +32,7 @@ shortify/
 │
 ├── api/
 │   └── shorten.py          # FastAPI endpoint for URL creation
+    └── redirect.ts 
 │
 └── src/
     ├── input.css           # TailwindCSS source
@@ -53,7 +51,7 @@ shortify/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -129,7 +127,7 @@ GET /:slug
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables needed (set these up locally)
 
 | Variable                   | Description                        |
 | -------------------------- | ---------------------------------- |
@@ -138,18 +136,6 @@ GET /:slug
 
 ---
 
-## 📋 Implementation Checklist
-
-- [x] Frontend UI with TailwindCSS
-- [ ] API endpoint `/api/shorten` (FastAPI)
-- [ ] Edge Middleware for redirects
-- [ ] Upstash Redis integration
-- [ ] Base62 slug generation
-- [ ] QR code generation
-- [ ] Analytics tracking (future)
-- [ ] Custom alias support (future)
-
----
 
 ## 📄 License
 
