@@ -9,7 +9,7 @@
       "destination": "/api/$1"
     },
     {
-      "source": "/:slug((?!api|src|_next|favicon.ico|index.html)[a-zA-Z0-9]+)",
+      "source": "/:slug((?!api|src|web|_next|favicon.ico|index.html)[a-zA-Z0-9]+)",
       "destination": "/api/redirect?slug=:slug"
     }
   ],
