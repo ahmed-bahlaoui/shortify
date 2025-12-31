@@ -1,6 +1,6 @@
-<div style="text-align: center; font-family: 'Arial'; font-size: 1.25em">
-  <h2>Shortify: Shorten your link, expand your reach</h2>
-  <img src="shortify.png" alt="Project screenshot"  style="border: 1px solid black;border-radius:18px">
+<div align=center>
+  <h2 style="font-family: 'Arial'">Shortify: Shorten your link, expand your reach</h2>
+  <img src="shortify.png" alt="Project screenshot"  style="border: 1px solid black; border-radius: 18px;">
 
 </div>
 
@@ -44,53 +44,9 @@ shortify/
 ```
 
 ## Tech Stack
-
-<table style="display: flex; justify-content: center; align-items: center;">
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=html" width="96" height="96" alt="HTML5" />
-      <br>HTML5
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=tailwind" width="96" height="96" alt="TailwindCSS" />
-      <br>TailwindCSS
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=js" width="96" height="96" alt="JavaScript" />
-      <br>JavaScript
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=python" width="96" height="96" alt="Python" />
-      <br>Python
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=fastapi" width="96" height="96" alt="FastAPI" />
-      <br>FastAPI
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=redis" width="96" height="96" alt="Redis" />
-      <br>Upstash Redis
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=vercel" width="96" height="96" alt="Vercel" />
-      <br>Vercel
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=bun" width="96" height="96" alt="Bun" />
-      <br>Bun
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=typescript" width="96" height="96" alt="TypeScript" />
-      <br>TypeScript
-    </td>
-    <td align="center" width="96">
-      <img src="https://skillicons.dev/icons?i=vscode" width="96" height="96" alt="VS Code" />
-      <br>VS Code
-    </td>
-  </tr>
-</table>
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=html,tailwindcss,js,ts,bun,fastapi,redis,python,vercel,vscode,&perline=5" />
+</p>
 
 ## Getting Started
 
